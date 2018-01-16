@@ -1,3 +1,32 @@
-<p>
-  cars works!
-</p>
+<table class="table table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>mark</th>
+      <th>model</th>
+      <th>year</th>
+      <th>maxSpeed</th>
+      <th>isAutomatic</th>
+      <th>engine</th>
+      <th>numberOfDoors</th>
+      
+    </tr>
+  </thead>
+  <tr *ngFor="let car of cars">
+    <td>{{car.id}}</td>
+    <td>{{car.mark}}</td>
+    <td>{{car.model}}</td>
+    <td>{{car.year}}</td>
+    <td>{{car.maxSpeed}}</td>
+    <td>{{car.isAutomatic}}</td>
+    <td>{{car.engine}}</td>
+    <td>{{car.numberOfDoors}}</td>
+    
+    <!-- <td>
+      <button class="btn btn-danger" (click)="removeBuyer(car)">
+        X
+      </button>
+    </td> -->
+
+  </tr>
+</table>
