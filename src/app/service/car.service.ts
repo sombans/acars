@@ -4,6 +4,7 @@ import { Cars } from '../components/model/cars';
 
 @Injectable()
 export class CarService {
+  idCount: number;
 
   cars;
   constructor() {
@@ -15,7 +16,7 @@ export class CarService {
         year: '1983',
         maxSpeed: '230',
         isAutomatic: 'no',
-        engine: 'Benzin-gas',
+        engine: 'Petrole-gas',
         numberOfDoors: '5',
       },
       {
@@ -25,7 +26,7 @@ export class CarService {
         year: '1987',
         maxSpeed: '200',
         isAutomatic: 'no',
-        engine: 'Benzin-gas',
+        engine: 'Petrole-gas',
         numberOfDoors: '4',
       },
       {
@@ -35,7 +36,7 @@ export class CarService {
         year: '2003',
         maxSpeed: '200',
         isAutomatic: 'no',
-        engine: 'Deisel',
+        engine: 'Diesel',
         numberOfDoors: '5',
       },
     ];
@@ -43,4 +44,9 @@ export class CarService {
   public getCars() {
     return this.cars;
   }
+
+  public newCar(car: Cars) {
+    this.cars.push(new Cars());
+    this.idCount = this.idCount++;
+}
 }

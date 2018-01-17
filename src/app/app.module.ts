@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
@@ -13,7 +13,7 @@ import { CarFormComponent } from './components/car-form/car-form.component';
 const appRoutes: Routes = [
   { path: 'cars', component: CarsComponent },
   { path: 'add', component: CarFormComponent },
-  
+
 ];
 @NgModule({
   declarations: [
@@ -25,9 +25,11 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [
     CarService,
+    { provide: 'APP_CONFIG_DEFAULT_TITLE', useValue: 'Contacts App' }
   ],
   bootstrap: [AppComponent]
 })
